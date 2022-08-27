@@ -1,3 +1,4 @@
+from cgitb import reset
 import random
 import os
 
@@ -75,7 +76,9 @@ def fun_guiones(n):
 
 g,p,c = fun_guiones(n)
 
+os.system("cls")
 fun_guiones(n)
+
 print(g)
 
 
@@ -110,7 +113,15 @@ while True:
         intentos += 1
         if intentos == 7:
             print("\tGame over!")
-            break
+            print(" ")
+            respuesta = input("reintentar? si/no > ")
+            if respuesta == "si":
+                intentos = 1
+            elif respuesta == "no":
+                print("\n\t\tPrograma finaizado")
+                print("\n\t\tby Fabio Javier Flores")
+                print(" ")
+                break
 
     
     

@@ -10,32 +10,32 @@ def main():
     import random
     import os
 
-    palabras = ['teclado', 'mouse', 'monitor','gabinete','internet']
+    palabras = ['teclado', 'mouse', 'monitor','gabinete','internet','fabio','valentina','reparadora','cuadro','jirafa']
     n = random.choice(palabras) #selecciona una palabra al azar de la lista
     #print(n)
 
 
     dibujo = ['''
-        +---+
-        |   |
-            |
-            |
-            |
-            |
+         +---+
+         |   |
+             |
+             |
+             |
+             |
         =========''', '''
-        +---+
-        |   |
-        O   |
-            |
-            |
-            |
+         +---+
+         |   |
+         O   |
+             |
+             |
+             |
         =========''', '''
-        +---+
-        |   |
-        O   |
-        |   |
-            |
-            |
+         +---+
+         |   |
+         O   |
+         |   |
+             |
+             |
         =========''', '''
          +---+
          |   |
@@ -134,6 +134,7 @@ def main():
                     while True:
                         r1 = input("¿Jugar de nuevo? si / no > ")
                         if r1 == "si":
+                            
                             main()
                         elif r1 == "no":
                             salir()
@@ -154,14 +155,17 @@ def main():
                 print(" ")                                
                 
                 while True:
-                    r2 = input("¿Reintentar?")
+                    r2 = input("¿Reintentar? si/ no >")
                     if r2 == "si":
+                        
                         main()
+                        
                     elif r2 == "no":
                         salir()
                         break
                     else: 
                         print("error")
+                
                 break
           
 main()           

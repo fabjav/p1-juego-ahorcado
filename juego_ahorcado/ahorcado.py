@@ -1,6 +1,12 @@
 
 def main():
-    
+    def salir():
+        print("""
+        Programa finalizado.
+        
+                created by Fabio Javier Flores""")
+        
+
     import random
     import os
 
@@ -69,9 +75,7 @@ def main():
         for i in n:
             palabra_lista.append(i)
         for i in n:
-            comparacion.append(i)
-            
-
+            comparacion.append(i)   
         
         return guiones,palabra_lista,comparacion
         
@@ -79,10 +83,10 @@ def main():
     g,p,c = fun_guiones(n)
 
     os.system("cls")
-    print(dibujo[0])
+    #print(dibujo[0])
     fun_guiones(n)
 
-    print(g)
+    #print(g)
 
 
     def letraSi(l):
@@ -90,61 +94,74 @@ def main():
             ind = p.index(l) #tomar ese indice y guardarlo en ind
             g[ind]=l # se cambia el guión por la letra según el ind
             p[ind] = "0"
-        print(g)
-    intentos = 1
+        #print(g)
+    intentos = 0
+    '''
     def letraNo(l,intentos):
         
         print(dibujo[intentos])
         
         print(f"fallos: {intentos}")
         print(g)
+        '''
+    def imprimirDibujo(dibujo):
+        print(dibujo[intentos])
+        
+        print(f"fallos: {intentos}")
+
 
 
 
 
     while True:
-        
+        imprimirDibujo(dibujo)
+        print(g)
         l = input("ingrese letra > ").lower()
         os.system("cls")
-        if l in p:
-            letraSi(l)
-            if g == c:
-                print("\n\t\tFelicitaciones!")
-                print(" ")
+        if l == "":
+            print("ingrese una letra por favor")
+        else: 
+        
+
+            if l in p:
+                letraSi(l)
+                if g == c:
+                    print("\n\t\tFelicitaciones!")
+                    imprimirDibujo(dibujo)
+                    print(f"'{n}' es correcto!")
+                    print(" ")
+                    
+                    while True:
+                        r1 = input("¿Jugar de nuevo? si / no > ")
+                        if r1 == "si":
+                            main()
+                        elif r1 == "no":
+                            salir()
+                            break
+                        else: 
+                            print("error")
+                    
+                    break
+
+
+            else:
+                intentos += 1
+            if intentos == 6:
+                print("\tGame over!")
+                imprimirDibujo(dibujo)
+                print(f"la palabra era: {n}")
+                
+                print(" ")                                
+                
                 while True:
-                    respuesta1 = input("jugar de nuevo? si/no > ")
-                    if respuesta1 == "si":
+                    r2 = input("¿Reintentar?")
+                    if r2 == "si":
                         main()
-                    elif respuesta1 == "no":
+                    elif r2 == "no":
+                        salir()
                         break
                     else: 
-                        print("error de codigo")
-
-
-        else:
-            letraNo(l,intentos)
-            intentos += 1
-        if intentos == 7:
-            print("\tGame over!")
-            print(" ")
-            
-            while True:
-                respuesta = input("reintentar? si/no > ")
-                if respuesta == "si":
-                    main()
-                elif respuesta == "no":
-                    break
-                else: 
-                    print("error de codigo")
-                
-                
-                
-             
-
-                    
+                        print("error")
+                break
+          
 main()           
-                
-                
-
-    
-    

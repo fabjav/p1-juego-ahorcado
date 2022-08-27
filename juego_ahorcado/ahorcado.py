@@ -1,10 +1,6 @@
 
 def main():
-    def salir():
-        print("""
-        Programa finalizado.
-        
-                created by Fabio Javier Flores""")
+    
         
 
     import random
@@ -109,10 +105,16 @@ def main():
         
         print(f"fallos: {intentos}")
 
+    def salir():
+        print("""
+        Programa finalizado.
+        
+                created by Fabio Javier Flores""")
 
 
 
 
+    #ejecución del programa
     while True:
         imprimirDibujo(dibujo)
         print(g)

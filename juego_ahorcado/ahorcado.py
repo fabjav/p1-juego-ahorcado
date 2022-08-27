@@ -3,7 +3,7 @@ import os
 
 palabras = ['teclado', 'mouse', 'monitor','gabinete','internet']
 n = random.choice(palabras) #selecciona una palabra al azar de la lista
-print(n)
+#print(n)
 
 
 dibujo = ['''
@@ -91,16 +91,20 @@ def letraNo(l,intentos):
     print(dibujo[intentos])
     
     print(f"fallos: {intentos}")
+    print(g)
 
 
 
 
 while True:
-    l = input("> ")
+    
+    l = input("ingrese letra > ").lower()
+    os.system("cls")
     if l in p:
         letraSi(l)
         if g == c:
             print("Felicitaciones!")
+            break
     else:
         letraNo(l,intentos)
         intentos += 1

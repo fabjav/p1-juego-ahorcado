@@ -1,3 +1,4 @@
+
 from cgitb import reset
 import random
 import os
@@ -111,17 +112,22 @@ while True:
     else:
         letraNo(l,intentos)
         intentos += 1
-        if intentos == 7:
-            print("\tGame over!")
-            print(" ")
-            respuesta = input("reintentar? si/no > ")
-            if respuesta == "si":
-                intentos = 1
-            elif respuesta == "no":
-                print("\n\t\tPrograma finaizado")
-                print("\n\t\tby Fabio Javier Flores")
-                print(" ")
-                break
+    if intentos == 7:
+        print("\tGame over!")
+        print(" ")
+        respuesta = input("reintentar? si/no > ")
+        if respuesta == "no":
+            print("""
+            programa finalizado
+
+            
+            \t\tby Fabio Javier Flores""")
+            break
+        elif respuesta == "si":
+            
+            
+                
+                
 
     
     

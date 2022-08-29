@@ -7,8 +7,8 @@ def main():
     import os
 
     palabras = ['teclado', 'mouse', 'monitor','gabinete','internet','fabio','valentina','reparadora','cuadro','jirafa']
-    n = random.choice(palabras) #selecciona una palabra al azar de la lista
-    #n = palabras[1]
+    #n = random.choice(palabras) #selecciona una palabra al azar de la lista
+    n = palabras[1]
     #print(n)
 
 
@@ -159,13 +159,16 @@ def main():
         print(g)
         l = input("ingrese letra > ").lower()
         os.system("cls")
+        
+        if l == n:
+            mensajeGanador()
+            break
 
         if l == "":
             print("ingrese una letra por favor")
         else:     
             if l in p:
                 letraSi(l)
-            
             else:
                 intentos+=1
         if g == c:
@@ -175,11 +178,4 @@ def main():
             mensajePerdedor()
             break
                 
-   
-        
-        
-   
-       
-
-          
 main()           

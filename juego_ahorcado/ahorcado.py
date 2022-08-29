@@ -2,12 +2,17 @@
 from time import sleep
 
 
+
 def main():
     
+    
         
-
+    import time
     import random
     import os
+
+    def mensajeInicial():
+        print("hola")
 
     palabras = ['teclado', 'mouse', 'monitor','gabinete','internet','fabio','valentina','reparadora','cuadro','jirafa']
     n = random.choice(palabras) #selecciona una palabra al azar de la lista
@@ -174,9 +179,11 @@ def main():
                 print("error")
 
 
-
+    
+    
     #CICLO PRINCIPAL
     while True:
+        
         imprimirDibujo(dibujo)
         print(g)
         l = input("ingrese letra > ").lower()

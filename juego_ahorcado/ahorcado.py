@@ -1,4 +1,7 @@
 
+from time import sleep
+
+
 def main():
     
         
@@ -135,7 +138,26 @@ def main():
         imprimirDibujo(dibujo)
         print(f"la palabra era: '{n}'")
         
-        print(" ")                                
+        print(" ")  
+        while True:
+            r3 = input("¿Reintentar? si/ no >").lower()
+            if r3 == "si":
+                
+                main()
+                break
+                
+            elif r3 == "no":
+                
+                salir()
+                break
+            else: 
+                print("error")
+    def mensajePerdedorTotal():
+        print("\tGame over!")
+        
+        print(f"la palabra era: '{n}'")
+        
+        print(" ")                               
         
         while True:
             r2 = input("¿Reintentar? si/ no >").lower()
@@ -159,23 +181,37 @@ def main():
         print(g)
         l = input("ingrese letra > ").lower()
         os.system("cls")
-        
-        if l == n:
-            mensajeGanador()
-            break
-
         if l == "":
             print("ingrese una letra por favor")
-        else:     
-            if l in p:
-                letraSi(l)
-            else:
-                intentos+=1
-        if g == c:
-            mensajeGanador()
-            break
-        if intentos == 6:
-            mensajePerdedor()
-            break
+            
+        
+        else: 
+            aLista = list(l)
+            if len(aLista) > 3:
+                if aLista == c:
+                    mensajeGanador()
+                    break
+                else:
+                    os.system('cls')
+                    print(dibujo[6]) 
+                    print("Fallos: Totales")
+                    mensajePerdedorTotal()
+                    
+                    break
+            
+                
+            else:     
+                if l in p:
+                    letraSi(l)
+                else:
+                    intentos+=1
+            if g == c:
+                mensajeGanador()
+                sleep(3)
+                break
+            if intentos == 6:
+                mensajePerdedor()
+                sleep(3)
+                break
                 
 main()           

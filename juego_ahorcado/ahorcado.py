@@ -105,7 +105,7 @@ def main():
         
         print(f"fallos: {intentos}")
 
-    def salir():
+    def salir(r2):
         print("""
         Programa finalizado.
         
@@ -139,7 +139,7 @@ def main():
                             
                             main()
                         elif r1 == "no":
-                            salir()
+                            salir(r2)
                             break
                         else: 
                             print("error")
@@ -163,7 +163,7 @@ def main():
                         main()
                         
                     elif r2 == "no":
-                        salir()
+                        salir(r2)
                         break
                     else: 
                         print("error")

@@ -8,6 +8,7 @@ def main():
 
     palabras = ['teclado', 'mouse', 'monitor','gabinete','internet','fabio','valentina','reparadora','cuadro','jirafa']
     n = random.choice(palabras) #selecciona una palabra al azar de la lista
+    #n = palabras[1]
     #print(n)
 
 
@@ -95,79 +96,90 @@ def main():
     '''
     def letraNo(l,intentos):
         
-        print(dibujo[intentos])
+        intentos +=1
+'''
         
-        print(f"fallos: {intentos}")
-        print(g)
-        '''
     def imprimirDibujo(dibujo):
         print(dibujo[intentos])
         
         print(f"fallos: {intentos}")
 
-    def salir(r2):
+    def salir():
         print("""
         Programa finalizado.
         
                 created by Fabio Javier Flores""")
+        
+
+    def mensajeGanador():
+        print("\n\t\tFelicitaciones!")
+        imprimirDibujo(dibujo)
+        print(f"'{n}' es correcto!")
+        print(" ")
+        
+        while True:
+            r1 = input("¿Jugar de nuevo? si / no > ").lower()
+            
+            if r1 == "si":
+                
+                main()
+                break
+            elif r1 == "no":
+                
+                salir()
+                break
+            else: 
+                print("error")
+    def mensajePerdedor():
+        print("\tGame over!")
+        imprimirDibujo(dibujo)
+        print(f"la palabra era: '{n}'")
+        
+        print(" ")                                
+        
+        while True:
+            r2 = input("¿Reintentar? si/ no >").lower()
+            if r2 == "si":
+                
+                main()
+                break
+                
+            elif r2 == "no":
+                
+                salir()
+                break
+            else: 
+                print("error")
 
 
 
-
-    #ejecución del programa
+    #CICLO PRINCIPAL
     while True:
         imprimirDibujo(dibujo)
         print(g)
         l = input("ingrese letra > ").lower()
         os.system("cls")
+
         if l == "":
             print("ingrese una letra por favor")
-        else: 
-        
-
+        else:     
             if l in p:
                 letraSi(l)
-                if g == c:
-                    print("\n\t\tFelicitaciones!")
-                    imprimirDibujo(dibujo)
-                    print(f"'{n}' es correcto!")
-                    print(" ")
-                    
-                    while True:
-                        r1 = input("¿Jugar de nuevo? si / no > ")
-                        if r1 == "si":
-                            
-                            main()
-                        elif r1 == "no":
-                            salir(r2)
-                            break
-                        else: 
-                            print("error")
-                    
-                    break
-
-
+            
             else:
-                intentos += 1
-            if intentos == 6:
-                print("\tGame over!")
-                imprimirDibujo(dibujo)
-                print(f"la palabra era: {n}")
+                intentos+=1
+        if g == c:
+            mensajeGanador()
+            break
+        if intentos == 6:
+            mensajePerdedor()
+            break
                 
-                print(" ")                                
-                
-                while True:
-                    r2 = input("¿Reintentar? si/ no >")
-                    if r2 == "si":
-                        
-                        main()
-                        
-                    elif r2 == "no":
-                        salir(r2)
-                        break
-                    else: 
-                        print("error")
-                
-                break
+   
+        
+        
+   
+       
+
           
 main()           

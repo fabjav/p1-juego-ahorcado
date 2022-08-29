@@ -10,8 +10,8 @@ def main():
     import os
 
     palabras = ['teclado', 'mouse', 'monitor','gabinete','internet','fabio','valentina','reparadora','cuadro','jirafa']
-    #n = random.choice(palabras) #selecciona una palabra al azar de la lista
-    n = palabras[1]
+    n = random.choice(palabras) #selecciona una palabra al azar de la lista
+    #n = palabras[1]
     #print(n)
 
 

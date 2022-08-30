@@ -303,6 +303,7 @@ def main():
                 else: 
                     print(f"Letras usadas: {us}")
                     print("letra ya usada")
+                    intentos-=1
 
              
             if len(aLista) > 2:
@@ -332,6 +333,6 @@ def main():
                 time.sleep
                 break
     
-#mensajeInicial() 
+mensajeInicial() 
              
 main()           

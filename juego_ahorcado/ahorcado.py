@@ -1,4 +1,5 @@
 
+
 from time import sleep
 
 
@@ -264,7 +265,14 @@ def main():
             else: 
                 print("error")
 
-
+    
+    usadaL = []
+    def usadas(l):
+        
+        usadaL.append(l)
+        print("Letras usadas: ",end="")
+        print(usadaL)
+        
     
     
     #CICLO PRINCIPAL
@@ -272,15 +280,23 @@ def main():
         
         imprimirDibujo(dibujo)
         print(g)
+        
         l = input("ingrese letra > ").lower()
+        
+            
         os.system("cls")
+        
+            
+
         if l == "":
             print("ingrese una letra por favor")
             
         
         else: 
             aLista = list(l)
-            if len(aLista) > 3:
+            if len(aLista) == 1:
+                usadas(l)
+            if len(aLista) > 2:
                 if aLista == c:
                     mensajeGanador()
                     break
@@ -307,6 +323,6 @@ def main():
                 time.sleep
                 break
     
-mensajeInicial() 
+#mensajeInicial() 
              
 main()           

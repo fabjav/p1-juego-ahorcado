@@ -156,15 +156,17 @@ def main():
     def fun_guiones(n):
         palabra_lista = []
         guiones = []
+        guionesC = ""
         comparacion = []
         for i in n:
             guiones.append("_")
+       
         for i in n:
             palabra_lista.append(i)
         for i in n:
             comparacion.append(i)   
         
-        return guiones,palabra_lista,comparacion
+        return guiones,palabra_lista,comparacion,
         
 
     g,p,c = fun_guiones(n)
@@ -272,7 +274,8 @@ def main():
         usadaL.append(l)
         print("Letras usadas: ",end="")
         print(usadaL)
-        
+        return usadaL
+    us = usadaL
     
     
     #CICLO PRINCIPAL
@@ -290,12 +293,18 @@ def main():
 
         if l == "":
             print("ingrese una letra por favor")
-            
+           
         
         else: 
             aLista = list(l)
             if len(aLista) == 1:
-                usadas(l)
+                if l not in usadaL:
+                    usadas(l)
+                else: 
+                    print(f"Letras usadas: {us}")
+                    print("letra ya usada")
+
+             
             if len(aLista) > 2:
                 if aLista == c:
                     mensajeGanador()
@@ -312,7 +321,7 @@ def main():
             else:     
                 if l in p:
                     letraSi(l)
-                else:
+                elif l not in p:
                     intentos+=1
             if g == c:
                 mensajeGanador()

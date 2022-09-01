@@ -1,3 +1,4 @@
+
 def main():
     
     
@@ -245,6 +246,8 @@ def main():
                 time.sleep
                 break
 
+
 from Introduccion import mensajeInicial
 mensajeInicial()
+
 main()           
